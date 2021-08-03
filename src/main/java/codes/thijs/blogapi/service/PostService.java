@@ -8,6 +8,6 @@ public interface PostService {
 
     Post savePost(Post post);
     List<Post> getAllPosts();
-
+    Post getPost(long id);
 
 }

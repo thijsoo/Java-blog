@@ -1,13 +1,5 @@
 package codes.thijs.blogapi.models;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-
-import java.sql.Date;
-import java.time.LocalDateTime;
-
 import javax.persistence.*;
 
 @Entity
@@ -27,15 +19,8 @@ public class Post extends AbstractAuditableModel {
     private SeoTags seoTags;
 
 
-    public Post() {
-    }
-
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -71,4 +56,12 @@ public class Post extends AbstractAuditableModel {
         this.author = author;
     }
 
+
+    public SeoTags getSeoTags() {
+        return seoTags;
+    }
+
+    public void setSeoTags(SeoTags seoTags) {
+        this.seoTags = seoTags;
+    }
 }

@@ -1,5 +1,7 @@
 package codes.thijs.blogapi.service.impl;
 
+import codes.thijs.blogapi.exceptions.PostNotFoundException;
+import codes.thijs.blogapi.exceptions.ResourceNotFoundException;
 import codes.thijs.blogapi.models.Post;
 import codes.thijs.blogapi.repositories.PostRepository;
 import codes.thijs.blogapi.service.PostService;
@@ -24,6 +26,11 @@ public class PostServiceImpl implements PostService {
     @Override
     public List<Post> getAllPosts() {
         return this.postRepository.findAll();
+    }
+
+    @Override
+    public Post getPost(long id) {
+        return this.postRepository.findById(id).orElseThrow(() -> new PostNotFoundException(id));
     }
 
 }

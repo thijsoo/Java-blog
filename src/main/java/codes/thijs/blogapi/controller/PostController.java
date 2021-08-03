@@ -29,4 +29,7 @@ public class PostController {
    public List<Post> getAllPosts(){
         return this.postService.getAllPosts();
    }
+
+    @GetMapping("/{id}")
+   public Post getPost(@PathVariable Long id){return this.postService.getPost(id);}
 }
