@@ -20,11 +20,6 @@ public class PostController {
     }
 
 
-
-   @PostMapping
-   public ResponseEntity<Post> savePost(@RequestBody Post post){
-        return new ResponseEntity<Post>(this.postService.savePost(post), HttpStatus.CREATED);
-   }
    @GetMapping("/blogs")
    public List<Post> getAllPosts(){
         return this.postService.getAllPosts();
